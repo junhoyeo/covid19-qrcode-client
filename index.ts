@@ -16,20 +16,25 @@ export const loginWithNaver = async (credentials: ICredentials) => {
   const page = await browser.newPage();
   await page.goto('https://nid.naver.com/nidlogin.login');
 
-  await page.evaluate(({ email, password }) => {
-    const emailInputElement = document.querySelector<HTMLInputElement>(
-      'input#id',
-    );
-    if (emailInputElement) {
-      emailInputElement.value = email;
-    }
-    const passwordInputElement = document.querySelector<HTMLInputElement>(
-      'input#pw',
-    );
-    if (passwordInputElement) {
-      passwordInputElement.value = password;
-    }
-  }, credentials);
+  const { email, password } = credentials;
+  await page.evaluate(
+    (email: string, password: string) => {
+      const emailInputElement = document.querySelector<HTMLInputElement>(
+        'input#id',
+      );
+      if (emailInputElement) {
+        emailInputElement.value = email;
+      }
+      const passwordInputElement = document.querySelector<HTMLInputElement>(
+        'input#pw',
+      );
+      if (passwordInputElement) {
+        passwordInputElement.value = password;
+      }
+    },
+    email,
+    password,
+  );
 
   await page.click('input.btn_global');
   await page.waitForNavigation();

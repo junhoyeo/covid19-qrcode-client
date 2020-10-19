@@ -1,4 +1,4 @@
-# COVID-19-QR-Client
+# COVID19 QR Client
 
 > 대한민국 전자출입명부(QR 체크인)에 사용되는 **QR 코드** 이미지를 가져오는 모듈<br />
 > Programmatically generate **QR code image** used in South Korea's COVID-19 pathway check-in
@@ -9,7 +9,7 @@
 - Maybe you can put this into your intranet backend and use it to your app. But I don't think it's that helpful, through.
 
 ```ts
-import { loginWithNaver, getQR } from 'covid-19-qr-client';
+import { loginWithNaver, getQR } from 'covid19-qrcode-client';
 
 const cookies = loginWithNaver({
   email: 'your-email@naver.com',
