@@ -1,4 +1,4 @@
-# COVID19 QR Client
+# COVID19 QRcode Client
 
 > 대한민국 전자출입명부(QR 체크인)에 사용되는 **QR 코드** 이미지를 가져오는 모듈<br />
 > Programmatically generate **QR code image** used in South Korea's COVID-19 pathway check-in
