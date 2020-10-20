@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer';
+import puppeteer, { LaunchOptions } from 'puppeteer';
 import axios from 'axios';
 import { parse } from 'node-html-parser';
 
@@ -7,11 +7,11 @@ export interface ICredentials {
   password: string;
 }
 
-export const loginWithNaver = async (credentials: ICredentials) => {
-  const browser = await puppeteer.launch({
-    dumpio: true,
-    headless: false,
-  });
+export const loginWithNaver = async (
+  credentials: ICredentials,
+  puppeteerLaunchOptions: LaunchOptions = { dumpio: true },
+) => {
+  const browser = await puppeteer.launch(puppeteerLaunchOptions);
 
   const page = await browser.newPage();
   await page.goto('https://nid.naver.com/nidlogin.login');

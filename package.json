@@ -1,6 +1,6 @@
 {
   "name": "covid19-qrcode-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Programmatically generate QR code image used in South Korea's COVID-19 pathway check-in",
   "repository": "https://github.com/junhoyeo/covid-19-qr-client",
   "author": "Junho Yeo <hanaro0704@gmail.com>",
